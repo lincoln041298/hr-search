@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 
 export interface InterfaceProps {}
 
@@ -86,8 +87,10 @@ export default function Interface() {
                 <p className="h-[1px] bg-black mt-10 mx-10 mb-5"></p>
                 <div className="flex px-12 mb-10">
                     <Tippy
+                        interactive={true}
+                        theme="light"
                         content={
-                            <div className="text-red-900  bg-white">
+                            <div className="">
                                 <ul>
                                     <li>Nguyen Van Linh</li>
                                     <li>Ho Thi Yen Nhi</li>
@@ -101,19 +104,34 @@ export default function Interface() {
                             className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             <FontAwesomeIcon
-                                className="mr-3"
+                                className="mr-3 w-10 h-10"
                                 icon={faThumbsUp}
                             />
                             Thích
                         </button>
                     </Tippy>
-                    <button
-                        type="button"
-                        className="inline-flex ml-5 items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    <Tippy
+                        interactive={true}
+                        theme="light"
+                        content={
+                            <div>
+                                <ul>
+                                    <li>0</li>
+                                </ul>
+                            </div>
+                        }
                     >
-                        <FontAwesomeIcon className="mr-3" icon={faThumbsDown} />
-                        Không Thích
-                    </button>
+                        <button
+                            type="button"
+                            className="inline-flex ml-5 items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            <FontAwesomeIcon
+                                className="mr-3 w-10 h-10"
+                                icon={faThumbsDown}
+                            />
+                            Không Thích
+                        </button>
+                    </Tippy>
                 </div>
             </div>
         </section>

@@ -9,7 +9,7 @@ export function HrSearch() {
         <section className="bg-black">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-5xl pt-20 font-semibold text-center text-white">
-                    Candideta Page
+                    Candidate Page
                 </h1>
                 <div className="mt-20 p-40">
                     <h3 className="text-orange-500 font-medium text-xl">
@@ -22,9 +22,7 @@ export function HrSearch() {
                                 className="form-input w-full rounded-md pr-10"
                             />
                             <p className="absolute right-4 top-2.5 w-5 h-5">
-                                <FontAwesomeIcon
-                                    icon={faMagnifyingGlass}
-                                />
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </p>
                         </div>
                         <p className="ml-4 w-5 h-5">
@@ -35,7 +33,7 @@ export function HrSearch() {
                         </p>
                     </form>
 
-                <SearchForm/>
+                    <SearchForm />
                 </div>
             </div>
         </section>
