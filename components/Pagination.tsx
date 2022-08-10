@@ -64,15 +64,15 @@ const Pagination = ({ totalPage, onHandleChangePage }: Props) => {
                     />
                 </svg>
             }
-            containerClassName="flex items-center"
-            pageLinkClassName="mx-1 flex items-center justify-center border w-[55px] h-[55px] text-lg font-bold hover:bg-[#252525] hover:border-[#252525] hover:text-[#586800]"
+            containerClassName="flex items-center justify-center"
+            pageLinkClassName="mx-1 flex items-center justify-center border w-10 h-10 text-lg font-bold hover:bg-white hover:border-[#252525] hover:text-black rounded-lg"
             nextClassName="ml-1"
-            nextLinkClassName="flex w-[55px] h-[55px] border items-center justify-center"
+            nextLinkClassName="flex w-10 h-10 rounded-lg border items-center justify-center"
             previousClassName="mr-1"
-            previousLinkClassName="flex w-[55px] h-[55px] border items-center justify-center"
-            breakClassName="mx-1 cursor-not-allowed flex items-center justify-center text-[#252525] border w-[55px] h-[55px] text-lg font-bold hover:bg-[#252525] hover:border-[#252525] hover:text-[#586800]"
+            previousLinkClassName="flex w-10 h-10 rounded-lg border items-center justify-center"
+            breakClassName="mx-1 cursor-not-allowed flex items-center justify-center text-white border w-[55px] h-[55px] text-lg font-bold hover:bg-white hover:border-[#252525] hover:text-black"
             disabledClassName="bg-gray-100 cursor-not-allowed"
-            activeLinkClassName="text-[#586800] bg-[#252525] border border-solid border-[#252525]"
+            activeLinkClassName="text-white bg-[#252525] border border-solid border-[#252525]"
             onPageChange={onPageChange}
         />
     );

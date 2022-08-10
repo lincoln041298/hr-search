@@ -14,37 +14,35 @@ export const CandidateData = [
             {
                 id: 0,
                 stage1: 'Fresher Back-End develop - GCO Software',
-                year: '02/2018 - 05/2018'
+                year: '02/2018 - 05/2018',
             },
             {
                 id: 1,
                 stage1: 'Fresher Back-End develop - Neolab',
-                year: '02/2018 - 05/2018'
+                year: '02/2018 - 05/2018',
             },
             {
                 id: 2,
                 stage1: 'Fresher Back-End develop - FPT Software',
-                year: '02/2018 - 05/2018'
-            }
+                year: '02/2018 - 05/2018',
+            },
         ],
         learnstory: [
             {
                 id: 0,
                 stage1: 'Fresher Back-End develop - GCO Software',
-                year: '02/2018 - 05/2018'
+                year: '02/2018 - 05/2018',
             },
             {
                 id: 1,
                 stage1: 'Fresher Back-End develop - Neolab',
-                year: '02/2018 - 05/2018'
+                year: '02/2018 - 05/2018',
             },
-           
-        ]
-
+        ],
     },
     {
         id: 1,
-        avatar: '/logo.png',
+        avatar: '/anhlinh.webp',
         name: 'Nguyen Dang Duc Linh',
         job: 'Project Manager',
         path: 'nguyendangduclinh',
@@ -52,11 +50,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 2,
-        avatar: '/logo.png',
+        avatar: '/chile.webp',
         name: 'Tran Nhat Le',
         job: 'Business Analytics',
         path: '/trannhatle',
@@ -64,11 +91,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 3,
-        avatar: '/logo.png',
+        avatar: '/linne.jpeg',
         name: 'Nguyen Van Linh',
         job: 'Front-End Developer',
         path: 'nguyenvanlinh',
@@ -76,11 +132,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 4,
-        avatar: '/logo.png',
+        avatar: '/chilien.jpeg',
         name: 'Tran Thi Nhu Lien',
         job: 'Quality Control',
         path: 'tranthinhulien',
@@ -88,11 +173,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 5,
-        avatar: '/logo.png',
+        avatar: '/chiuyen.jpeg',
         name: 'Bui Thi Uyen',
         job: 'Quality Control',
         path: 'buithiuyen',
@@ -100,11 +214,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 6,
-        avatar: '/logo.png',
+        avatar: '/yennhi.jpeg',
         name: 'Ho Thi Yen Nhi',
         job: 'Business Analytics',
         path: 'hothiyennhi',
@@ -112,11 +255,40 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
     {
         id: 7,
-        avatar: '/logo.png',
+        avatar: '/anhtuan.jpeg',
         name: 'Nguyen Cong Tuan',
         job: 'Designer',
         path: 'nguyencongtuan',
@@ -124,6 +296,76 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
-        number: '1234567890'
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+    },
+    {
+        id: 8,
+        avatar: '/LeAnh.png',
+        name: 'Lê anh',
+        job: 'Designer',
+        path: 'leanh',
+        city: 'Da nang',
+        birthday: '1/1/1998',
+        street: 'Hải Châu, Đà Nẵng',
+        email: 'chiuchiu93@gmail.com',
+        number: '1234567890',
+        jobstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 2,
+                stage1: 'Fresher Back-End develop - FPT Software',
+                year: '02/2018 - 05/2018',
+            },
+        ],
+        learnstory: [
+            {
+                id: 0,
+                stage1: 'Fresher Back-End develop - GCO Software',
+                year: '02/2018 - 05/2018',
+            },
+            {
+                id: 1,
+                stage1: 'Fresher Back-End develop - Neolab',
+                year: '02/2018 - 05/2018',
+            },
+        ],
     },
 ];
