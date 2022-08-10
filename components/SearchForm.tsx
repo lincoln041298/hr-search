@@ -2,7 +2,8 @@ import { CandidateData } from '@/data';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Pagination } from './pagination';
+import { Pagination } from './Pagination';
+
 export interface Props {}
 const SearchForm = ({ itemsPerPage }: any) => {
     const router = useRouter();
