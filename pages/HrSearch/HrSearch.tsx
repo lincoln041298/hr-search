@@ -1,10 +1,10 @@
-import SearchForm from '@/components/SearchForm';
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SearchForm from '@/components/SearchForm';
 
 export interface HrSearchProps {}
 
-export function HrSearch() {
+export default function HrSearch() {
     return (
         <section className="bg-black">
             <div className="max-w-6xl mx-auto">
