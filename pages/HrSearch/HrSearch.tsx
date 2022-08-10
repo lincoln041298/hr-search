@@ -1,6 +1,6 @@
+import SearchForm from '@/components/SearchForm';
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SearchForm } from './SearchForm';
 
 export interface HrSearchProps {}
 
@@ -35,7 +35,7 @@ export function HrSearch() {
                         </p>
                     </form>
 
-                    <SearchForm/>
+                <SearchForm/>
                 </div>
             </div>
         </section>

@@ -1,4 +1,5 @@
-import { Header } from "../Header";
+import { Header } from "../common/Header"
+
 
 export interface MainLayoutProps {
     children?: React.ReactNode

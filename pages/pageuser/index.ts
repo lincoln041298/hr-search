@@ -1,1 +1,0 @@
-export {Interface} from './[InterfaceUser]'

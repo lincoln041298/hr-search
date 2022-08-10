@@ -1,11 +1,9 @@
-import { MainLayout } from '@/components/common/Layout';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { HrSearch } from './HrSearch';
 
 const Home: NextPage = () => {
     return (
-        <MainLayout>
             <div>
                 <Head>
                     <title>Candidate</title>
@@ -19,8 +17,7 @@ const Home: NextPage = () => {
                 <main>
                     <HrSearch/>
                 </main>
-            </div>
-        </MainLayout>
+            </div>   
     );
 };
 

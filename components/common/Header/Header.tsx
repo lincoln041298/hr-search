@@ -1,22 +1,26 @@
-import logo from '@/public/logo.png'
+import logo from '@/public/logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export interface HeaderProps {}
 
 export function Header() {
     return (
-        <section className=" bg-slate-100">
+        <section className="bg-slate-100">
             <div className="pt-5 px-4 max-w-6xl mx-auto">
                 <div className="flex justify-between items-center">
-                    <p>
-                        <Image
-                            className="rounded-lg"
-                            src={logo}
-                            width={100}
-                            height={100}
-                            alt="avatar"
-                        ></Image>
-                    </p>
+                    <Link href="/">
+                        <p>
+                            <Image
+                                className="rounded-lg"
+                                src={logo}
+                                width={100}
+                                height={100}
+                                alt="avatar"
+                            ></Image>
+                        </p>
+                    </Link>
+
                     <div>
                         <button
                             type="button"
