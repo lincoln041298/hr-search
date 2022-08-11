@@ -10,6 +10,8 @@ export const CandidateData = [
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
         number: '1234567890',
+        comment:
+            'Làm việc có trách nhiệm, hòa đồng với mọi người và luôn hoàn thành công việc đúng hạn',
         jobstory: [
             {
                 id: 0,
@@ -92,6 +94,8 @@ export const CandidateData = [
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
         number: '1234567890',
+        comment:
+            'Làm việc có sáng tạo, kỹ năng làm việc nhóm tốt, tích cực hỗ trợ đồng nghiệp trong công việc',
         jobstory: [
             {
                 id: 0,
@@ -173,6 +177,7 @@ export const CandidateData = [
         birthday: '1/1/1998',
         street: 'Hải Châu, Đà Nẵng',
         email: 'chiuchiu93@gmail.com',
+        comment: 'Có tinh thần học hỏi tốt ',
         number: '1234567890',
         jobstory: [
             {

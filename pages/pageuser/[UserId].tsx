@@ -14,11 +14,12 @@ export interface InterfaceProps {}
 
 export default function Interface() {
     const Router = useRouter();
+    console.log(Router);
     return (
         <div>
             <section className="px-4 max-w-6xl mx-auto">
                 <ProfileUser Route={Router} />
-                <EvaluateUser/>
+                <EvaluateUser />
             </section>
         </div>
     );

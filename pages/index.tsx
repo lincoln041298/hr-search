@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import HrSearch from './HrSearch/HrSearch';
+import { HrSearch } from './HrSearch/HrSearch';
 
 const Home: NextPage = () => {
     return (

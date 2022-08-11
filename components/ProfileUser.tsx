@@ -11,13 +11,14 @@ export interface ProfileUserProps {}
 
 export function ProfileUser({ Route }: any) {
     const [user, setUser] = useState<any>();
+
     useEffect(() => {
         const newUserData = CandidateData.filter(
             (data) => data.id === Number(Route.query.UserId)
         );
         setUser(newUserData);
     }, []);
-;
+    console.log(setUser);
     return (
         <div className="mt-20 border border-slate-300 rounded-lg">
             {user &&
