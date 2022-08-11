@@ -1,11 +1,11 @@
+import DisplayUser from '@/components/DisplayUser';
+import SearchForm from '@/components/SearchForm';
+import { CandidateData } from '@/data';
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SearchForm from '@/components/SearchForm';
-import { useEffect, useRef, useState } from 'react';
 import { Combobox } from '@headlessui/react';
-import { CandidateData } from '@/data';
-import DisplayUser from '@/components/DisplayUser';
 import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 
 export interface HrSearchProps {}
 
@@ -14,7 +14,7 @@ export function HrSearch() {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [selectedPerson, setSelectedPerson] = useState('');
     const [query, setQuery] = useState('');
-
+    console.log(selectedPerson);
     const handleClick = (e: any) => {
         setIsActive(!isActive);
     };
@@ -32,6 +32,11 @@ export function HrSearch() {
             document.removeEventListener('mousedown', clickOutside);
         };
     }, [isActive]);
+    const router = useRouter();
+    const handleClickPage = (id: number) => {
+        router.push(`/pageuser/${id}`);
+    };
+
     const filteredPeople =
         query === ''
             ? CandidateData
@@ -97,13 +102,13 @@ export function HrSearch() {
                                                                         {({
                                                                             selected,
                                                                         }) => {
-                                                                            console.log(
-                                                                                selected
-                                                                            );
                                                                             return (
                                                                                 <SearchForm
                                                                                     person={
                                                                                         person
+                                                                                    }
+                                                                                    handleClickPage={
+                                                                                        handleClickPage
                                                                                     }
                                                                                 />
                                                                             );

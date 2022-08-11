@@ -3,7 +3,7 @@ import Image from 'next/image';
 export interface DisplayUserProps {}
 
 const DisplayUser = ({ activeOption }: any) => {
-    console.log(activeOption);
+    // console.log(activeOption);
     return (
         <div>
             {activeOption.name}

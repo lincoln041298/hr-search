@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';
+
 export interface ProfileUserProps {}
 
 export function ProfileUser({ Route }: any) {
@@ -17,8 +18,8 @@ export function ProfileUser({ Route }: any) {
             (data) => data.id === Number(Route.query.UserId)
         );
         setUser(newUserData);
-    }, []);
-    console.log(setUser);
+    }, [Route.query.UserId]);
+
     return (
         <div className="mt-20 border border-slate-300 rounded-lg">
             {user &&
@@ -31,6 +32,7 @@ export function ProfileUser({ Route }: any) {
                                     src={data.avatar}
                                     width={100}
                                     height={100}
+                                    alt="avt"
                                 />
                             </p>
                             <div>
