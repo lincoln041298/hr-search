@@ -4,6 +4,9 @@ import { CandidateData } from '@/data';
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Combobox } from '@headlessui/react';
+import clsx from 'clsx';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
@@ -12,18 +15,27 @@ export interface HrSearchProps {}
 export function HrSearch() {
     const node: any = useRef();
     const [isActive, setIsActive] = useState<boolean>(false);
-    const [selectedPerson, setSelectedPerson] = useState('');
-    const [query, setQuery] = useState('');
-    console.log(selectedPerson);
+    const [selectedPerson, setSelectedPerson] = useState([]);
+    const [query, setQuery] = useState<any>('');
+    console.log(query);
     const handleClick = (e: any) => {
-        setIsActive(!isActive);
+        if (isActive) {
+            setTimeout(() => {
+                setIsActive(false);
+            }, 500);
+        } else {
+            setIsActive(true);
+        }
     };
 
     const clickOutside = (e: any) => {
         if (node.current.contains(e.target)) {
             return;
         }
-        setIsActive(false);
+
+        setTimeout(() => {
+            setIsActive(false);
+        }, 500);
     };
 
     useEffect(() => {
@@ -32,28 +44,24 @@ export function HrSearch() {
             document.removeEventListener('mousedown', clickOutside);
         };
     }, [isActive]);
-    const router = useRouter();
-    const handleClickPage = (id: number) => {
-        router.push(`/pageuser/${id}`);
-    };
 
     const filteredPeople =
         query === ''
             ? CandidateData
-            : CandidateData.filter((person) => {
+            : CandidateData.filter((person: any) => {
                   return person.name
                       .toLowerCase()
                       .includes(query.toLowerCase());
               });
 
     return (
-        <section className="bg-slate-800">
+        <section className="">
             <div className="max-w-6xl mx-auto py-20">
-                <div className="rounded-lg shadow-lg bg-white">
+                <div className="">
                     <h1 className="text-5xl pt-10 font-semibold text-center text-black">
                         Candidate Page
                     </h1>
-                    <div className="mt-10 px-20 py-20 ">
+                    <div className="px-20 py-10 ">
                         <div className="p-20">
                             <h3 className="text-slate-500 font-medium text-xl">
                                 Tìm kiếm ứng viên
@@ -70,7 +78,7 @@ export function HrSearch() {
                                         {({ activeOption }: any) => (
                                             <>
                                                 <Combobox.Input
-                                                    className="w-full rounded-lg"
+                                                    className="w-full rounded-lg border-none bg-slate-100 relative"
                                                     onChange={(event) =>
                                                         setQuery(
                                                             event.target.value
@@ -78,14 +86,12 @@ export function HrSearch() {
                                                     }
                                                     ref={node}
                                                     onClick={handleClick}
-                                                    displayValue={(
-                                                        person: any
-                                                    ) => person.name}
                                                 />
                                                 <div
-                                                    className={`${
-                                                        isActive && `active`
-                                                    } list-data`}
+                                                    className={clsx(
+                                                        'list-data',
+                                                        isActive ? 'active' : ''
+                                                    )}
                                                 >
                                                     <div className="col-span-1 ">
                                                         <Combobox.Options>
@@ -99,27 +105,18 @@ export function HrSearch() {
                                                                             person
                                                                         }
                                                                     >
-                                                                        {({
-                                                                            selected,
-                                                                        }) => {
-                                                                            return (
-                                                                                <SearchForm
-                                                                                    person={
-                                                                                        person
-                                                                                    }
-                                                                                    handleClickPage={
-                                                                                        handleClickPage
-                                                                                    }
-                                                                                />
-                                                                            );
-                                                                        }}
+                                                                        <SearchForm
+                                                                            person={
+                                                                                person
+                                                                            }
+                                                                        />
                                                                     </Combobox.Option>
                                                                 )
                                                             )}
                                                         </Combobox.Options>
                                                     </div>
 
-                                                    <div>
+                                                    <div className="border-l-[0.5px]  ">
                                                         {activeOption && (
                                                             <div>
                                                                 <DisplayUser

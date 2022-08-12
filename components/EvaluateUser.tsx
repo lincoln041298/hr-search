@@ -47,6 +47,7 @@ export function EvaluateUser() {
                                             src={data.avatar}
                                             width={60}
                                             height={60}
+                                            alt="avt in there"
                                         ></Image>
                                     </p>
                                     <div className="ml-10">
