@@ -1,43 +1,28 @@
-import { useState } from 'react';
-import { Combobox } from '@headlessui/react';
-import { people } from '@/data';
+import { useContext, useRef, useState } from "react";
+import { Combobox } from "@headlessui/react";
+import { UserProvider, useUser } from "@/context/UserContext";
+import { UserLogin } from "@/data";
+
+const people = [
+  { id: 1, name: "Durward Reynolds" },
+  { id: 2, name: "Kenton Towne" },
+  { id: 3, name: "Therese Wunsch" },
+  { id: 4, name: "Benedict Kessler" },
+  { id: 5, name: "Katelyn Rohan" },
+];
+
+export interface TestThemeProps {
+  value?: any;
+  setValue?: any;
+}
 
 export default function TestTheme() {
-    const [selectedPerson, setSelectedPerson] = useState(people[0]);
-    const [query, setQuery] = useState('');
-
-    const filteredPeople =
-        query === ''
-            ? people
-            : people.filter((person) => {
-                  return person.name
-                      .toLowerCase()
-                      .includes(query.toLowerCase());
-              });
-
-    return (
-        <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-            {({ activeOption }) => (
-                <>
-                    <Combobox.Input
-                        onChange={(event) => setQuery(event.target.value)}
-                        displayValue={(person: any) => person.name}
-                    />
-                    <Combobox.Options>
-                        {filteredPeople.map((person) => (
-                            <Combobox.Option key={person.id} value={person}>
-                                {person.name}
-                            </Combobox.Option>
-                        ))}
-                    </Combobox.Options>
-
-                    {activeOption && (
-                        <div>
-                            The current active user is: {activeOption.name}
-                        </div>
-                    )}
-                </>
-            )}
-        </Combobox>
-    );
+  const { user, setUser } = useUser();
+  return (
+    <div>
+      <h2>Home</h2>
+      <div>{JSON.stringify(user, null, 2)}</div>
+      <button>Login</button>
+    </div>
+  );
 }

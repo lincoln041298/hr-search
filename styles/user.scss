@@ -1,23 +1,31 @@
 .jobstory {
-    @apply before:content-[''] before:w-10 before:h-[1.5px] before:bg-slate-100 before:absolute before:-left-0.5;
+  @apply before:content-[''] before:w-10 before:h-[1.5px] before:bg-slate-100 before:absolute before:left-0 before:top-16;
 }
 
 .jobstory {
-    @apply after:content-[''] after:w-2 after:h-2 after:rounded-full after:bg-slate-400 after:absolute after:left-8;
+  @apply after:content-[''] after:w-2 after:h-2 after:rounded-full after:bg-slate-400 after:absolute after:left-8 after:top-[3.8rem];
 }
 
 .learnstory {
-    @apply before:content-[''] before:w-10 before:h-[1.5px] before:bg-slate-100 before:absolute before:-right-12;
+  @apply before:content-[''] before:w-10 before:h-[1.5px] before:bg-slate-100 before:absolute before:-right-12 before:top-16;
 }
 
 .learnstory {
-    @apply after:content-[''] after:w-2 after:h-2 after:rounded-full after:bg-slate-400 after:absolute after:-right-3;
+  @apply after:content-[''] after:w-2 after:h-2 after:rounded-full after:bg-slate-400 after:absolute after:-right-3 after:top-[3.8rem];
 }
 
 .list-data {
-    @apply hidden w-full overflow-hidden grid-cols-2 mt-5 overflow-y-auto shadow-lg p-5 rounded-lg absolute;
+  @apply hidden w-full overflow-hidden grid-cols-2 mt-5 overflow-y-auto shadow-lg p-5 rounded-lg absolute;
 }
 
 .active {
-    @apply grid;
+  @apply grid;
+}
+
+.button-hidden {
+  opacity: 0;
+}
+
+.button-active {
+  opacity: 1;
 }
