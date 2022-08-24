@@ -1,11 +1,14 @@
+import { MainLayout } from "@/components/Layout";
 import SignUpForm from "@/components/SignUpForm";
 
 export interface AccountTSHProps {}
 
 export default function AccountTSH() {
   return (
-    <div>
-      <SignUpForm />
-    </div>
+    <MainLayout>
+      <div>
+        <SignUpForm />
+      </div>
+    </MainLayout>
   );
 }

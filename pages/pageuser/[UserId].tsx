@@ -9,6 +9,7 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/light.css";
 import { ProfileUser } from "@/components/ProfileUser";
 import { EvaluateUser } from "@/components/EvaluateUser";
+import { MainLayout } from "@/components/Layout";
 
 export interface InterfaceProps {}
 
@@ -16,11 +17,11 @@ export default function Interface() {
   const Router = useRouter();
   console.log(Router);
   return (
-    <div>
+    <MainLayout>
       <section className="px-4 max-w-6xl mx-auto">
         <ProfileUser Route={Router} />
         <EvaluateUser />
       </section>
-    </div>
+    </MainLayout>
   );
 }

@@ -1,8 +1,9 @@
+import { MainLayout } from "@/components/Layout";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { HrSearch } from "./HrSearch/HrSearch";
 
-const Home: NextPage = () => {
+export default function Page() {
   return (
     <div>
       <Head>
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </main>
     </div>
   );
+}
+Page.getLayout = function getLayout(page: any) {
+  return <MainLayout>{page}</MainLayout>;
 };
-
-export default Home;

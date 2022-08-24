@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 
 export interface DisplayUserProps {}
@@ -6,12 +7,17 @@ const DisplayUser = ({ activeOption }: any) => {
   return (
     <div className="hidden h-96 w-1/2 flex-none flex-col divide-y divide-gray-100 overflow-y-auto sm:flex">
       <div className="flex-none p-6 text-center">
-        <Image
+        {/* <Image
           src={activeOption.avatar}
           width={80}
           height={80}
           className="rounded-full"
           alt="imgavt"
+        /> */}
+        <img
+          className="w-20 h-20 rounded-full object-cover mx-auto"
+          src={activeOption.avatar}
+          alt="avtar user"
         />
         <h2 className="mt-3 font-semibold text-gray-900">
           {activeOption.name}
@@ -24,7 +30,7 @@ const DisplayUser = ({ activeOption }: any) => {
             Số điện thoại
           </dt>
           <dd>{activeOption.phone}</dd>
-          <dt className="col-end-1 font-semibold text-gray-900">URL</dt>
+          {/* <dt className="col-end-1 font-semibold text-gray-900">URL</dt> */}
           <dd className="truncate">
             <a href={activeOption.url} className="text-indigo-600 underline">
               {activeOption.url}

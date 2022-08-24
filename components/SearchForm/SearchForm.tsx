@@ -28,7 +28,7 @@ const SearchForm = ({ person, active }: any) => {
           <p className="mt-2 max-w-20 ">
             <img
               src={person.avatar}
-              className="rounded-full w-16 h-16"
+              className="rounded-full object-cover w-16 h-16"
               alt="imgavt"
             />
           </p>

@@ -10,9 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [value, setValue] = useState<string>("helo from context");
   return (
     <UserProvider>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
+      <Component {...pageProps} />
     </UserProvider>
   );
 }
