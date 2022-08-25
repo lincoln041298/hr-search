@@ -1,5 +1,5 @@
 import { MainLayout } from "@/components/Layout";
-import { UserProvider } from "@/context/UserContext";
+import { AuthContextProvider } from "@/context/UserContext";
 import "@/styles/main.scss";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
   const [value, setValue] = useState<string>("helo from context");
   return (
-    <UserProvider>
+    <AuthContextProvider>
       <Component {...pageProps} />
-    </UserProvider>
+    </AuthContextProvider>
   );
 }
 

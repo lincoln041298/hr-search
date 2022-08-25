@@ -1,17 +1,60 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import {
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth } from "@/config/firebase";
+import firebaseui from "firebaseui";
 
-interface Props {
-  children: ReactNode;
-}
+const AuthContext = createContext<any>({});
 
-export const UserContext = createContext<any>("");
+export const useAuth = () => useContext(AuthContext);
 
-export const UserProvider = ({ children }: Props) => {
-  const [user, setUser] = useState<string>("a du ma");
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
-};
+export const AuthContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const [user, setUser] = useState<any>(null);
 
-export const useUser = () => {
-  return useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+
+  // console.log(user);
+
+  useEffect(() => {
+    const unsubcribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+        });
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+    return () => unsubcribe();
+  }, []);
+
+  const signup = (email: string, password: string) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const login = (email: string, password: string) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const logout = async () => {
+    setUser(null);
+    await signOut(auth);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, login, signup, logout }}>
+      {loading ? null : children}
+    </AuthContext.Provider>
+  );
 };

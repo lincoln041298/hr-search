@@ -1,5 +1,5 @@
 import { MainLayout } from "@/components/Layout";
-import SignUpForm from "@/components/SignUpForm";
+import LoginForm from "@/components/LoginForm";
 
 export interface AccountTSHProps {}
 
@@ -7,7 +7,7 @@ export default function AccountTSH() {
   return (
     <MainLayout>
       <div>
-        <SignUpForm />
+        <LoginForm />
       </div>
     </MainLayout>
   );

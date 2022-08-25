@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAuth } from "@/context/UserContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -28,10 +28,12 @@ const schema = yup
   })
   .required();
 
-export default function SignUpForm() {
+export default function LoginForm() {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
+  const [wrongPws, setWrongPws] = useState<boolean>(false);
 
+  const { user, login } = useAuth();
   const {
     register,
     setValue,
@@ -41,15 +43,17 @@ export default function SignUpForm() {
     resolver: yupResolver(schema),
   });
 
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
-
   const onSubmit = async (data: any) => {
-    setLoading(true);
-    const loadingdata = await timeout(1000);
-    setLoading(false);
-    router.push("AfterLogin/UserLogin");
+    try {
+      setLoading(true);
+      await login(data.name, data.password);
+      setLoading(false);
+      router.push("AfterLogin/UserLogin");
+    } catch (err) {
+      setLoading(false);
+      setWrongPws(true);
+      console.log(err);
+    }
   };
 
   return (
@@ -196,6 +200,8 @@ export default function SignUpForm() {
                       {errors.password && (
                         <MessageError message={errors.password.message} />
                       )}
+
+                      {wrongPws && <div>Sai rồi em ơi</div>}
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
