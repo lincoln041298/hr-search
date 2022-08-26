@@ -11,6 +11,7 @@ import icongoogle from "@/public/google-brands.svg";
 import Image from "next/image";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "@/config/firebase";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 /* eslint-disable @next/next/no-img-element */
 export interface AccessFormProps {}
@@ -44,6 +45,8 @@ export default function AccessForm() {
   const router = useRouter();
   const { user, signup } = useAuth();
   const [loading, setLoading] = useState<boolean>(false);
+  const [password, setPassword] = useState(false);
+
   const {
     register,
     setValue,
@@ -59,7 +62,7 @@ export default function AccessForm() {
   const onSubmit = async (data: any) => {
     try {
       setLoading(true);
-      await signup(data.email, data.password);
+      await signup(data.email, data.numberphone, data.password);
       setLoading(false);
       router.push("AfterLogin/UserLogin");
     } catch (err) {
@@ -75,6 +78,10 @@ export default function AccessForm() {
       .catch((error) => {
         console.log("error", error);
       });
+  };
+
+  const togglePassword = () => {
+    setPassword(!password);
   };
   return (
     <>
@@ -111,7 +118,7 @@ export default function AccessForm() {
                   )}
                 </div>
               </div>
-              {/* 
+
               <div>
                 <label
                   htmlFor="number"
@@ -129,8 +136,8 @@ export default function AccessForm() {
                     <MessageError message={errors.numberphone.message} />
                   )}
                 </div>
-              </div> */}
-              {/* <div>
+              </div>
+              {/* <div> 
                 <label className="block text-sm font-medium text-gray-700">
                   Họ và tên
                 </label>
@@ -152,15 +159,25 @@ export default function AccessForm() {
                 >
                   Password
                 </label>
-                <div className="mt-1">
+                <div className="mt-1 relative">
                   <input
+                    type={`${password ? "text" : "password"}`}
                     {...register("password")}
-                    type="password"
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="appearance-none  block w-full pl-3 pr-10 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                   {errors.password && (
                     <MessageError message={errors.password.message} />
                   )}
+                  <div
+                    className="absolute right-2 top-2"
+                    onClick={togglePassword}
+                  >
+                    {password ? (
+                      <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    )}
+                  </div>
                 </div>
               </div>
               <div>

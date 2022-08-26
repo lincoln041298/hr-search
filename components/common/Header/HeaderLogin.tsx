@@ -5,10 +5,15 @@ import TestAvatar from "@/public/ahai2.jpeg";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "@/context/UserContext";
+import { auth, provider } from "@/config/firebase";
+import LoginForm from "@/components/LoginForm";
 
 export interface HeaderLoginProps {}
 
 export function HeaderLogin() {
+  const { user, logout } = useAuth();
+
   const router = useRouter();
   return (
     <section className="bg-slate-100">
@@ -37,7 +42,9 @@ export function HeaderLogin() {
               ></Image>
 
               <div className="ml-5 flex flex-col cursor-pointer">
-                <h3 className="font-medium">Van Linh</h3>
+                <h3 className="font-medium">
+                  {auth.currentUser && auth.currentUser.email}
+                </h3>
                 <div className="text-sm font-light flex items-center">
                   Thông tin tài khoản
                   <FontAwesomeIcon className="ml-2 w-3 h-3" icon={faGear} />
@@ -46,6 +53,24 @@ export function HeaderLogin() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex max-w-4xl mx-auto">
+        {user ? (
+          <div
+            onClick={() => {
+              logout();
+              router.push("/AccountTSH");
+            }}
+          >
+            Logout
+          </div>
+        ) : (
+          <div className="flex">
+            <div>
+              <LoginForm />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

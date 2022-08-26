@@ -32,7 +32,6 @@ export default function LoginForm() {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const [wrongPws, setWrongPws] = useState<boolean>(false);
-
   const { user, login } = useAuth();
   const {
     register,
@@ -201,7 +200,11 @@ export default function LoginForm() {
                         <MessageError message={errors.password.message} />
                       )}
 
-                      {wrongPws && <div>Sai rồi em ơi</div>}
+                      {wrongPws && (
+                        <div className="mt-2 text-sm font-light text-red-500">
+                          Mất khẩu sai! Vui lòng nhập lại
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
